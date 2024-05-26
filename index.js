@@ -1,33 +1,19 @@
-const input = document.getElementById('input')
+
 const items = document.getElementById('list')
-document.getElementById('basic-addon2').addEventListener('click', function(e){
-
-if(input.value === "" ){
-    alert('write something please')
-}
-else{
-   const list = document.createElement('li')
-   list.textContent = input.value
-   list.classList.add('list-group-item', 'categoryTag')
-   items.appendChild(list)
-   items.addEventListener('click', function(e){
-    e.target.remove();
-   })
-   
+const form = document.querySelector('form')
+form.addEventListener('submit', function(e){
+    if ( e.target.input.value ===""){
+        alert("Please enter a valid");
+        
+    }    else{
+        const list = document.createElement("li")
+           list.innerText = input.value
+           list.classList.add("list-group-item")
+           items.appendChild(list)
+            }
     
-}
-document.addEventListener('keydown', function(e){
-    const list = document.createElement('li')
-    if(e.key==='Enter')
-    list.textContent = input.value
-    list.classList.add('list-group-item', 'categoryTag')
-    items.appendChild(list)
-    items.addEventListener('click', function(e){
-     e.target.remove();
 
 })
 
-})
 
-input.value = ""
-})
+
